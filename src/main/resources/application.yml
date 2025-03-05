@@ -1,0 +1,91 @@
+spring:
+  application:
+    name: library-management-system
+  
+  # MySQL Database 설정
+  datasource:
+    url: jdbc:mysql://localhost:3306/library_db?useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8&allowPublicKeyRetrieval=true&useUnicode=true
+    username: libraryuser
+    password: librarypassword
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 10
+      connection-timeout: 30000
+  
+  # JPA 설정
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        '[format_sql]': true
+        dialect: org.hibernate.dialect.MySQL8Dialect
+  
+  # H2 Console 설정 (개발 중에는 유지, 프로덕션 환경에서는 비활성화 필요)
+  h2:
+    console:
+      enabled: false
+  
+  # Security 설정
+  security:
+    user:
+      name: admin
+      password: admin
+
+  # Thymeleaf 설정
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+
+  # DevTools 설정
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+      poll-interval: '2s'
+      quiet-period: '1s'
+      additional-paths: 'src/main/java,src/main/resources'
+      additional-exclude: 'static/**,public/**'
+
+# Server 설정
+server:
+  port: 8080
+  compression:
+    enabled: true
+    mime-types: text/html,text/xml,text/plain,text/css,application/javascript,application/json
+    min-response-size: 1024
+
+# Swagger 설정
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+    tags-sorter: alpha
+  api-docs:
+    path: /api-docs
+  show-actuator: true
+
+# Actuator 설정
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+      base-path: /actuator
+  endpoint:
+    health:
+      show-details: always
+    prometheus:
+      access: UNRESTRICTED
+
+# Logging 설정
+logging:
+  level:
+    '[root]': INFO
+    '[com.library]': DEBUG
+    '[org.hibernate.SQL]': DEBUG
+    '[org.springframework.web]': DEBUG 
