@@ -176,12 +176,12 @@
 
 2. 의존성 설치:
    ```bash
-   npm install
+   pnpm install
    ```
 
 3. 개발 서버 실행:
    ```bash
-   npm run dev
+   pnpm run dev
    ```
 
 ### 접속 정보
