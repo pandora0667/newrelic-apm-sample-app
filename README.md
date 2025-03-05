@@ -94,8 +94,6 @@
 ├── src/                    # Spring Boot 백엔드 소스 코드
 ├── library-frontend/       # Next.js 프론트엔드 소스 코드
 ├── docker/                # Docker 관련 설정 파일
-├── backup-init/           # 초기 데이터 백업
-├── docs/                  # 프로젝트 문서
 ├── build.gradle          # Gradle 빌드 설정
 ├── settings.gradle       # Gradle 프로젝트 설정
 ├── Dockerfile           # 백엔드 Docker 이미지 설정
@@ -198,7 +196,6 @@
 - Spring Boot 3.4.3
 - Spring Data JPA
 - MySQL 8.0
-- NewRelic APM
 
 ### 프론트엔드
 - Next.js
