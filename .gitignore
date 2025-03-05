@@ -864,6 +864,7 @@ FodyWeavers.xsd
 .env.production
 .env.development
 .vscode
+docs/
 
 
 # End of https://www.toptal.com/developers/gitignore/api/java,react,nextjs,windows,macos,linux,visualstudio,visualstudiocode,jetbrains+all,jetbrains+iml,gradle,node
