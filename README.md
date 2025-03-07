@@ -162,6 +162,39 @@
 
 #### 로컬 환경에서 실행
 
+##### 프론트엔드 환경 변수 설정
+1. 개발 환경 설정
+   - `library-frontend/.env.development.example`을 복사하여 `.env.development` 파일을 생성합니다.
+   - 환경 변수:
+     ```
+     # Backend API URL
+     NEXT_PUBLIC_API_URL=http://localhost:8080/api/v1
+     
+     # Environment
+     NODE_ENV=development
+     
+     # Disable Next.js telemetry
+     NEXT_TELEMETRY_DISABLED=1
+     ```
+
+2. 프로덕션 환경 설정
+   - `library-frontend/.env.production.example`을 복사하여 `.env.production` 파일을 생성합니다.
+   - 환경 변수:
+     ```
+     # Backend API URL
+     NEXT_PUBLIC_API_URL=http://app:8080/api/v1
+     
+     # Environment
+     NODE_ENV=production
+     
+     # Disable Next.js telemetry
+     NEXT_TELEMETRY_DISABLED=1
+     ```
+
+> 참고: 
+> - 로컬 개발 시에는 `http://localhost:8080/api/v1`을 사용합니다.
+> - Docker Compose로 실행 시에는 컨테이너 네트워크 내에서 `http://app:8080/api/v1`을 사용합니다.
+
 ##### 백엔드 실행
 1. 프로젝트 루트 디렉토리에서 다음 명령어를 실행합니다:
    ```bash
